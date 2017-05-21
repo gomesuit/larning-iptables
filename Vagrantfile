@@ -13,6 +13,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     host.vm.hostname = _HOSTNAME
     host.vm.network 'private_network', ip: _PRIVATE_IP_ADDRESS
-    host.vm.provision :shell, path: 'provision.sh', privileged: false
+    #host.vm.provision :shell, path: 'provision.sh', privileged: false
+    host.vm.provision :shell, path: 'provision.sh'
   end
 end

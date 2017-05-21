@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-sudo yum install -y vim
+yum install -y vim
 
-sudo yum install -y iptables-services
-sudo systemctl stop firewalld
-sudo systemctl mask firewalld
-sudo systemctl start iptables
-sudo systemctl enable iptables
+yum install -y iptables-services
+systemctl stop firewalld
+systemctl mask firewalld
+systemctl start iptables
+systemctl enable iptables
+
+echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
+sysctl -p
